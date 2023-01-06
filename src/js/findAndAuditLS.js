@@ -3,10 +3,7 @@ import {parseOneFilm} from './parseApiToLS';
 
 export function getFilmData (targetCardId, base) {
     try {
-        localStorageArray = JSON.parse(localStorage.getItem(base));
-    } catch (err) {
-        console.error('Get LocslStorage error: ', err);
-    }
+        const localStorageArray = JSON.parse(localStorage.getItem(base));
         cardItem = findAndAdd(localStorageArray, targetCardId);
     if (cardItem) {
         isAdded = true;
@@ -15,6 +12,10 @@ export function getFilmData (targetCardId, base) {
     return findCardItem(targetCardId).then(cardItem => {
         return cardItem;
     });
+    } catch (err) {
+        console.error('Get LocslStorage error: ', err);
+    }
+        
 }
 
 function findCardItem (targetCardId) {
