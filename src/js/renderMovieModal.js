@@ -68,5 +68,6 @@ export function renderMovieModal({
   </div>
 </div>`;
 
+  divModal.firstElementChild.insertAdjacentHTML('afterend', markup);
   
 }
