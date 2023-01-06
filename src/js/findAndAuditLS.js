@@ -3,7 +3,7 @@ import {parseOneFilm} from './parseApiToLS';
 
 export function getFilmData (targetCardId, base) {
     try {
-        localStorageArray = JSON.parse(localStorage.getItem(base));
+        let localStorageArray = JSON.parse(localStorage.getItem(base));
     } catch (err) {
         console.error('Get LocslStorage error: ', err);
     }
