@@ -5,7 +5,7 @@ import { changeBtnStyle } from './changeModalBtn';
 
 const refs = getRefs();
 
-
+let isAdded = false;
 
 
 
