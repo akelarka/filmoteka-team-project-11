@@ -67,6 +67,7 @@ export function renderMovieModal({
     </div>
   </div>
 </div>`;
+
   divModal.firstElementChild.insertAdjacentHTML('afterend', markup);
   const modalWatchedBtn = document.querySelector('.modal-film__btn-watched');
   checkAdd('watched', modalWatchedBtn.dataset.id, modalWatchedBtn);
