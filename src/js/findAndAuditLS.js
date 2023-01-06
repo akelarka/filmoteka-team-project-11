@@ -1,6 +1,8 @@
 import {getById} from './api';
 import {parseOneFilm} from './parseApiToLS';
 
+let cardItem = null;
+
 export function getFilmData (targetCardId, base) {
     try {
         const localStorageArray = JSON.parse(localStorage.getItem(base));
