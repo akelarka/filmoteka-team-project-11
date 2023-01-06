@@ -3,6 +3,8 @@ import { getFilmData } from './findAndAuditLS';
 import { loadDataFromLS, setDataToLS } from './localStorageData';
 import { changeBtnStyle } from './changeModalBtn';
 
+let isAdded;
+
 const refs = getRefs();
 
 refs.divModal.addEventListener('click', function (e) {
