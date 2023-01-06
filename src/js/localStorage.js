@@ -42,7 +42,7 @@ export function onAddToLS(key, targetBtn, id) {
     );
     isAdded = true;
 
-    2(targetBtn, key);
+    changeBtnStyle(targetBtn, key);
   }
 }
 async function removeMovieFromLocalStorage (localStorageKey, newFilm) {
