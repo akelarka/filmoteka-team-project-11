@@ -9,7 +9,7 @@ const refs = getRefs();
 
 
 refs.divModal.addEventListener('click', function (e) {
-  let isAdded = false;
+  
   if (e.target.classList.contains('modal-film__btn-watched')) {
     const modalWatchedBtn = e.target;
     // console.log(modalWatchedBtn.dataset.id)
@@ -24,6 +24,7 @@ refs.divModal.addEventListener('click', function (e) {
 });
 
 export function onAddToLS(key, targetBtn, id) {
+  let isAdded = false;
   const filmId = Number(id); 
   const currentDataArray = loadDataFromLS(key);
   if (currentDataArray.find(film => film.id === Number(filmId)) !== undefined) {
