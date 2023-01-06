@@ -3,18 +3,21 @@ import { getFilmData } from './findAndAuditLS';
 import { loadDataFromLS, setDataToLS } from './localStorageData';
 import { changeBtnStyle } from './changeModalBtn';
 
-let isAdded;
+
+
 
 const refs = getRefs();
 
 refs.divModal.addEventListener('click', function (e) {
   if (e.target.classList.contains('modal-film__btn-watched')) {
     const modalWatchedBtn = e.target;
+    checkAdd('watched', modalWatchedBtn.dataset.id, modalWatchedBtn);
     // console.log(modalWatchedBtn.dataset.id)
     modalWatchedBtn.addEventListener('click', onAddToLS('watched', modalWatchedBtn, modalWatchedBtn.dataset.id));
     
   } else if ((e.target.classList.contains('modal-film__btn-queque')) ) {
     const modalQueueBtn = e.target;
+    checkAdd('queue', modalQueueBtn.dataset.id, modalQueueBtn);
     // console.log(modalQueueBtn.dataset.id)
     modalQueueBtn.addEventListener('click', onAddToLS('queue', modalQueueBtn, modalQueueBtn.dataset.id));
     
