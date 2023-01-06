@@ -3,21 +3,19 @@ import { getFilmData } from './findAndAuditLS';
 import { loadDataFromLS, setDataToLS } from './localStorageData';
 import { changeBtnStyle } from './changeModalBtn';
 
-
-
-
 const refs = getRefs();
+
+let cardItem = null;
+let isAdded = false;
 
 refs.divModal.addEventListener('click', function (e) {
   if (e.target.classList.contains('modal-film__btn-watched')) {
     const modalWatchedBtn = e.target;
-    checkAdd('watched', modalWatchedBtn.dataset.id, modalWatchedBtn);
     // console.log(modalWatchedBtn.dataset.id)
     modalWatchedBtn.addEventListener('click', onAddToLS('watched', modalWatchedBtn, modalWatchedBtn.dataset.id));
     
   } else if ((e.target.classList.contains('modal-film__btn-queque')) ) {
     const modalQueueBtn = e.target;
-    checkAdd('queue', modalQueueBtn.dataset.id, modalQueueBtn);
     // console.log(modalQueueBtn.dataset.id)
     modalQueueBtn.addEventListener('click', onAddToLS('queue', modalQueueBtn, modalQueueBtn.dataset.id));
     
@@ -81,9 +79,7 @@ async function addMovieToLocalStorage (localStorageKey, newFilm) {
 
 
 export function checkAdd(localStorageKey, targetCardId, targetBtn) {
-  
   if (loadDataFromLS(localStorageKey).some(film => film.id === Number(targetCardId))) {
-    let isAdded;
     isAdded = true;
   } else isAdded = false;
   changeBtnStyle(targetBtn, localStorageKey);
