@@ -14,6 +14,7 @@ export function renderMovieModal({
   vote_count = 0,
   id,
 }) {
+  let isAdded;
   let genresList = '';
   if (genres.length) {
     genresList = genres.map(genre => genre.name);

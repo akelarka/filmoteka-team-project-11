@@ -78,7 +78,9 @@ async function addMovieToLocalStorage (localStorageKey, newFilm) {
 
 
 export function checkAdd(localStorageKey, targetCardId, targetBtn) {
+  
   if (loadDataFromLS(localStorageKey).some(film => film.id === Number(targetCardId))) {
+    let isAdded;
     isAdded = true;
   } else isAdded = false;
   changeBtnStyle(targetBtn, localStorageKey);
