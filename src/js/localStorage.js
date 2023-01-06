@@ -6,9 +6,10 @@ import { changeBtnStyle } from './changeModalBtn';
 const refs = getRefs();
 
 
-let isAdded = false;
+
 
 refs.divModal.addEventListener('click', function (e) {
+  let isAdded = false;
   if (e.target.classList.contains('modal-film__btn-watched')) {
     const modalWatchedBtn = e.target;
     // console.log(modalWatchedBtn.dataset.id)
@@ -40,7 +41,7 @@ export function onAddToLS(key, targetBtn, id) {
     );
     isAdded = true;
 
-    changeBtnStyle(targetBtn, key);
+    2(targetBtn, key);
   }
 }
 async function removeMovieFromLocalStorage (localStorageKey, newFilm) {
