@@ -5,7 +5,7 @@ import { changeBtnStyle } from './changeModalBtn';
 
 const refs = getRefs();
 
-let cardItem = null;
+
 let isAdded = false;
 
 refs.divModal.addEventListener('click', function (e) {
