@@ -12,7 +12,6 @@ function toggleModal() {
 
 function handelClickToPoster(e) {
   const value = Object(e.target);
-  console.log(value);
   const valueId = value.id;
 
   if (!valueId) return;
