@@ -20,7 +20,8 @@ function handelClickToPoster(e) {
 
   fetchVideo(valueId)
     .then(data => {
-      trailerKey = data.results[0].key;
+      const trailerKey = data.results[0].key;
+      console.log(trailerKey)
       const instance =  `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${trailerKey}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
       updateModalContainer(instance);
     })
