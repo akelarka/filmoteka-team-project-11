@@ -10,7 +10,7 @@ function toggleModal() {
   refs.modalVideo.classList.toggle('is-hidden');
 }
 
-function handelClickToPoster(e) {
+async function handelClickToPoster(e) {
   const value = Object(e.target);
   console.log(value);
   const valueId = value.id;
@@ -19,8 +19,8 @@ function handelClickToPoster(e) {
 
   toggleModal();
 
-  fetchVideo(valueId)
-    .then(data => {
+  const fetchV = await fetchVideo(valueId)
+  fetchV.then(data => {
       const videoArray = data.results[0]
       return videoArray;
     })
