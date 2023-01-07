@@ -1,4 +1,4 @@
-import userFilms from './api';
+import { userFilms } from './api';
 import { getRefs } from './refs';
 
 const refs = getRefs();
@@ -21,8 +21,8 @@ function handelClickToPoster(e) {
 
   fetchVideo(valueId)
     .then(data => {
-      const videoArray = data.results[0]
-      return videoArray;
+      console.log(data);
+      return (videoArray = data.results[0]);
     })
     .then(toShowVideo)
     .catch(error => {
@@ -37,7 +37,7 @@ function fetchVideo(valueId) {
 
 function markupVideo(videoArray) {
   const key = videoArray.key;
-  return `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  return `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 }
 
 function toShowVideo() {
