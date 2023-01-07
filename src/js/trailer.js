@@ -1,4 +1,4 @@
-import { userFilms } from './api';
+import userFilms from './api';
 import { getRefs } from './refs';
 
 const refs = getRefs();
@@ -10,7 +10,7 @@ function toggleModal() {
   refs.modalVideo.classList.toggle('is-hidden');
 }
 
-async function handelClickToPoster(e) {
+function handelClickToPoster(e) {
   const value = Object(e.target);
   console.log(value);
   const valueId = value.id;
@@ -19,8 +19,8 @@ async function handelClickToPoster(e) {
 
   toggleModal();
 
-  const fetchV = await fetchVideo(valueId)
-  fetchV.then(data => {
+  fetchVideo(valueId)
+    .then(data => {
       const videoArray = data.results[0]
       return videoArray;
     })
