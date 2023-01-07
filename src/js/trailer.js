@@ -21,8 +21,8 @@ function handelClickToPoster(e) {
 
   fetchVideo(valueId)
     .then(data => {
-      console.log(data);
-      return (videoArray = data.results[0]);
+      const videoArray = data.results[0]
+      return videoArray;
     })
     .then(toShowVideo)
     .catch(error => {
