@@ -12,6 +12,7 @@ function toggleModal() {
 
 function handelClickToPoster(e) {
   const value = Object(e.target);
+  console.log(value);
   const valueId = value.id;
 
   if (!valueId) return;
@@ -20,6 +21,7 @@ function handelClickToPoster(e) {
 
   fetchVideo(valueId)
     .then(data => {
+      console.log(data);
       return (videoArray = data.results[0]);
     })
     .then(toShowVideo)

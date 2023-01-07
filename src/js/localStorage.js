@@ -5,6 +5,7 @@ import { loadDataFromLS, setDataToLS } from './localStorageData';
 const refs = getRefs();
 let isAdded = false;
 
+
 refs.divModal.addEventListener('click', function (e) {
   if (e.target.classList.contains('modal-film__btn-watched')) {
     const modalWatchedBtn = e.target;
@@ -23,7 +24,6 @@ export function onAddToLS(key, targetBtn, id) {
   const filmId = Number(id); 
   const currentDataArray = loadDataFromLS(key);
   if (currentDataArray.find(film => film.id === Number(filmId)) !== undefined) {
-    
     removeMovieFromLocalStorage(
       key,
       getFilmData(filmId, key)
